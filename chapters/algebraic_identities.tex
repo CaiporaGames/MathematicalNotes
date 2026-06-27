@@ -1,0 +1,151 @@
+\section{Algebraic Identities}
+
+\subsection{Introduction}
+
+Algebraic identities are formulas that allow us to rewrite expressions in a
+more useful or factored form. They play a central role in number theory,
+especially when studying divisibility, prime numbers, and the structure of
+integers.
+
+In this chapter we explore classical identities, their applications, and
+historical curiosities.
+
+\subsection{Difference of Powers}
+
+One of the most important identities is the factorization of a difference of
+powers:
+
+\begin{theorem}[Difference of Powers]
+For any integer \(x\) and positive integer \(n\),
+
+
+\[
+x^n - 1 = (x - 1)(x^{n-1} + x^{n-2} + \cdots + x + 1).
+\]
+
+
+\end{theorem}
+
+This identity is fundamental in the study of numbers of the form
+\(x^n - 1\), especially when \(x = 2\).
+
+\begin{example}[Factoring a Mersenne-Type Number]
+Consider the number
+
+
+\[
+2^{15} - 1.
+\]
+
+
+Since \(15 = 3 \cdot 5\), we can apply the identity twice:
+
+
+\[
+2^{15} - 1 = (2^3 - 1)(2^{12} + 2^9 + 2^6 + 2^3 + 1).
+\]
+
+
+Then factor \(2^3 - 1\) again:
+
+
+\[
+2^3 - 1 = (2 - 1)(2^2 + 2 + 1) = 7.
+\]
+
+
+This method reveals the internal structure of the number without guessing
+prime factors.
+\end{example}
+
+\subsection{Sum of Powers}
+
+Another classical identity is the sum of powers:
+
+\begin{theorem}[Sum of Powers]
+For any integer \(x\) and positive integer \(n\),
+
+
+\[
+x^n + 1 =
+\begin{cases}
+(x + 1)(x^{n-1} - x^{n-2} + \cdots - x + 1), & \text{if } n \text{ is odd} \\
+\\[6pt]
+\text{irreducible over the integers}, & \text{if } n \text{ is even}.
+\end{cases}
+\]
+
+
+\end{theorem}
+
+\begin{example}[A Curious Identity]
+Since \(5\) is odd,
+
+
+\[
+2^5 + 1 = 33 = (2 + 1)(2^4 - 2^3 + 2^2 - 2 + 1).
+\]
+
+
+This identity explains why some numbers of the form \(2^n + 1\) factor,
+while others (the Fermat numbers) are suspected to be prime.
+\end{example}
+
+\subsection{Historical Notes}
+
+\begin{remark}[Euclid and Mersenne]
+Euclid already used the identity
+
+
+\[
+x^n - 1 = (x - 1)(x^{n-1} + \cdots + 1)
+\]
+
+
+in his proof that there are infinitely many primes.  
+Much later, Marin Mersenne studied numbers of the form \(2^p - 1\), now called
+\emph{Mersenne numbers}. Some of these are prime, and they produce the largest
+known primes in history.
+\end{remark}
+
+\begin{remark}[Fermat's Curiosity]
+Pierre de Fermat conjectured that all numbers of the form
+
+
+\[
+F_n = 2^{2^n} + 1
+\]
+
+
+were prime.  
+He was correct for \(n = 0,1,2,3,4\), but Euler disproved the conjecture by
+showing:
+
+
+\[
+F_5 = 2^{32} + 1 = 4294967297 = 641 \cdot 6700417.
+\]
+
+
+This is one of the most famous false conjectures in number theory.
+\end{remark}
+
+\subsection{Applications}
+
+\begin{itemize}
+    \item Factoring large integers using algebraic structure.
+    \item Understanding prime candidates such as Mersenne and Fermat numbers.
+    \item Simplifying expressions in modular arithmetic.
+    \item Building conjectures about divisibility and primality.
+\end{itemize}
+
+\subsection{Curiosities}
+
+\begin{itemize}
+    \item The largest known prime numbers are almost always of the form
+    \(2^p - 1\), where \(p\) is prime.
+    \item The identity for \(x^n - 1\) is used in cryptography, especially in
+    algorithms involving cyclic groups.
+    \item Some identities, like the sum of powers, behave differently depending
+    on whether the exponent is odd or even — a subtle but important detail.
+\end{itemize}

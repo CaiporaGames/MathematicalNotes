@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.6.19)  27 JUN 2026 17:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.5) (preloaded format=pdflatex 2026.6.19)  27 JUN 2026 21:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -358,7 +358,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
  (chapters/intro.tex) (chapters/chapter1.tex [1
 
-{C:/Users/timot/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]) (chapters/chapter2.tex) [2] (main.aux)
+{C:/Users/timot/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]) (chapters/algebraic_identities.tex [2]) [3] (main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
@@ -370,21 +370,21 @@ Package rerunfilecheck Warning: File `main.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: A9A18E49A905F785449AE0781DDFC5FC;804
-(rerunfilecheck)             After:  2228A73CB53BAA1051FA5247C8348824;710.
+(rerunfilecheck)             Before: E18D54F88320A79358D2B2B56F0383BA;1730
+(rerunfilecheck)             After:  C96DCF62F5854C68F385A512EDA640AC;1636.
  ) 
 Here is how much of TeX's memory you used:
- 10682 strings out of 467509
- 163855 string characters out of 5418889
- 593971 words of memory out of 5000000
- 39769 multiletter control sequences out of 15000+600000
- 631583 words of font info for 55 fonts, out of 8000000 for 9000
+ 10714 strings out of 467509
+ 164417 string characters out of 5418889
+ 594975 words of memory out of 5000000
+ 39785 multiletter control sequences out of 15000+600000
+ 632616 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 79i,6n,82p,591b,589s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on main.pdf (2 pages, 117646 bytes).
+ 79i,9n,82p,591b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\timot\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (3 pages, 179924 bytes).
 PDF statistics:
- 94 PDF objects out of 1000 (max. 8388607)
- 18 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 172 PDF objects out of 1000 (max. 8388607)
+ 32 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 
