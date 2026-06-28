@@ -3,9 +3,9 @@
 \contentsline {subsection}{\numberline {2.1}Basic Definitions}{3}{subsection.2.1}%
 \contentsline {subsection}{\numberline {2.2}Examples from Number Theory}{3}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Remarks}{3}{subsection.2.3}%
-<<<<<<< HEAD
 \contentsline {section}{\numberline {3}Logical Implication, Necessary Conditions, and Sufficient Conditions}{4}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Introduction}{4}{subsection.3.1}%
+
 =======
 \contentsline {section}{\numberline {3}Logical Implication, Necessary Conditions, and Sufficient Conditions}{3}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Introduction}{3}{subsection.3.1}%
@@ -61,7 +61,6 @@
 \contentsline {subsection}{\numberline {12.1}Example: The Derivative of $(x^2)$}{26}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}What We Have Discovered}{27}{subsection.12.2}%
 \contentsline {subsection}{\numberline {12.3}Problems}{27}{subsection.12.3}%
-<<<<<<< HEAD
 \contentsline {section}{\numberline {13}A Problem Before the Integral: Measuring a Curved Area}{28}{section.13}%
 \contentsline {subsection}{\numberline {13.1}The Area Problem}{28}{subsection.13.1}%
 \contentsline {subsection}{\numberline {13.2}First Approximation}{28}{subsection.13.2}%
@@ -93,7 +92,7 @@
 \contentsline {section}{\numberline {21}Ideals}{37}{section.21}%
 \contentsline {section}{\numberline {22}Prime Ideals}{38}{section.22}%
 \contentsline {subsection}{\numberline {22.1}Problem 14}{38}{subsection.22.1}%
-=======
+
 \contentsline {section}{\numberline {13}Algebraic Number Theory}{28}{section.13}%
 \contentsline {subsection}{\numberline {13.1}Why New Numbers Appear}{28}{subsection.13.1}%
 \contentsline {section}{\numberline {14}A New Number}{28}{section.14}%
@@ -120,4 +119,7 @@
 \contentsline {section}{\numberline {20}Ideals}{34}{section.20}%
 \contentsline {section}{\numberline {21}Prime Ideals}{35}{section.21}%
 \contentsline {subsection}{\numberline {21.1}Problem 14}{35}{subsection.21.1}%
+<<<<<<< HEAD
+>>>>>>> eeca8e76b26e64e46bf02563453f92c0884596ae
+=======
 >>>>>>> eeca8e76b26e64e46bf02563453f92c0884596ae
