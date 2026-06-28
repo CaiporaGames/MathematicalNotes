@@ -1,0 +1,561 @@
+\section{Logical Implication, Necessary Conditions, and Sufficient Conditions}
+
+\subsection{Introduction}
+
+Logic is the language we use to organize mathematical reasoning. Before proving
+theorems, we need to understand how mathematical statements are connected.
+
+A \emph{statement} is a sentence that is either true or false, but not both.
+
+For example,
+
+\[
+\text{``$2$ is even''}
+\]
+
+is a true statement, while
+
+\[
+\text{``$3$ is even''}
+\]
+
+is a false statement.
+
+However,
+
+\[
+x+1
+\]
+
+is not a statement by itself, because it is not true or false. It is only an
+expression. On the other hand,
+
+\[
+x+1>0
+\]
+
+can become a statement once we say what values of (x) we are considering.
+
+In this chapter we introduce implication, necessary conditions, sufficient
+conditions, logical equivalence, truth tables, and the contrapositive.
+
+\subsection{Implication}
+
+Let (A) and (B) be statements.
+
+\begin{definition}\[Implication\]
+The statement
+
+\[
+A \Rightarrow B
+\]
+
+means:
+
+\[
+\text{if $A$ is true, then $B$ must be true.}
+\]
+
+\end{definition}
+
+We read this as:
+
+\[
+\text{``$A$ implies $B$''}
+\]
+
+or
+
+\[
+\text{``if $A$, then $B$.''}
+\]
+
+The implication $(A \Rightarrow B)$ does not say that (A) causes (B). It only
+says that it is impossible for (A) to be true while (B) is false.
+
+So the meaning of
+
+\[
+A \Rightarrow B
+\]
+
+is:
+
+\[
+\text{there is no case where $A$ is true and $B$ is false.}
+\]
+
+When (A) is false, the implication makes no demand on (B). For this reason,
+in classical logic the implication $(A \Rightarrow B)$ is considered true
+whenever (A) is false.
+
+\subsection{Necessary and Sufficient Conditions}
+
+Implication allows us to describe when one condition guarantees another.
+
+\begin{definition}\[Sufficient Condition\]
+A statement (A) is a \emph{sufficient condition} for (B) if
+
+\[
+A \Rightarrow B.
+\]
+
+This means that (A) being true is enough to guarantee that (B) is true.
+\end{definition}
+
+In other words, if we know (A), then we automatically know (B).
+
+\begin{definition}\[Necessary Condition\]
+A statement (B) is a \emph{necessary condition} for (A) if
+
+\[
+A \Rightarrow B.
+\]
+
+This means that whenever (A) is true, (B) must also be true. Without (B),
+(A) cannot happen.
+\end{definition}
+
+Therefore, the same implication
+
+\[
+A \Rightarrow B
+\]
+
+has two interpretations:
+
+\begin{itemize}
+\item (A) is sufficient for (B);
+\item (B) is necessary for (A).
+\end{itemize}
+
+This is one of the most important ideas in logic.
+
+\subsection{Example: Divisibility}
+
+Let
+
+\[
+A = \text{``$n$ is divisible by $6$''},
+\]
+
+and
+
+\[
+B = \text{``$n$ is divisible by $3$''}.
+\]
+
+If (n) is divisible by (6), then (n) is divisible by (3). Therefore,
+
+\[
+A \Rightarrow B.
+\]
+
+So:
+
+\begin{itemize}
+\item being divisible by (6) is sufficient for being divisible by (3);
+\item being divisible by (3) is necessary for being divisible by (6).
+\end{itemize}
+
+However, being divisible by (3) is not sufficient for being divisible by (6).
+For example,
+
+\[
+9
+\]
+
+is divisible by (3), but it is not divisible by (6).
+
+So we have:
+
+\[
+A \Rightarrow B,
+\]
+
+but not
+
+\[
+B \Rightarrow A.
+\]
+
+\subsection{Logical Equivalence}
+
+Sometimes two statements imply each other.
+
+\begin{definition}\[Logical Equivalence\]
+Statements (A) and (B) are \emph{logically equivalent} if
+
+\[
+A \Rightarrow B
+\]
+
+and
+
+\[
+B \Rightarrow A.
+\]
+
+In this case we write
+
+\[
+A \Leftrightarrow B.
+\]
+
+\end{definition}
+
+We read this as:
+
+\[
+\text{``$A$ if and only if $B$.''}
+\]
+
+Logical equivalence means that (A) and (B) always have the same truth value.
+Either both are true or both are false.
+
+Equivalently,
+
+\[
+A \Leftrightarrow B
+\]
+
+means that (A) is both necessary and sufficient for (B), and (B) is both
+necessary and sufficient for (A).
+
+\subsection{Truth Tables}
+
+Truth tables allow us to study logical statements by checking all possible truth
+values.
+
+\subsubsection{Implication}
+
+The truth table for $(A \Rightarrow B)$ is:
+
+\begin{center}
+\begin{tabular}{c|c|c}
+(A) & (B) & $(A \Rightarrow B)$ \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & T \\
+F & F & T \\
+\end{tabular}
+\end{center}
+
+The only situation where $(A \Rightarrow B)$ is false is when (A) is true and
+(B) is false.
+
+So the implication
+
+\[
+A \Rightarrow B
+\]
+
+is equivalent to saying:
+
+\[
+\text{not both $A$ true and $B$ false.}
+\]
+
+\subsubsection{Equivalence}
+
+The truth table for $(A \Leftrightarrow B)$ is:
+
+\begin{center}
+\begin{tabular}{c|c|c}
+(A) & (B) & $(A \Leftrightarrow B)$ \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & T \\
+\end{tabular}
+\end{center}
+
+Equivalence is true exactly when (A) and (B) have the same truth value.
+
+\subsection{Converse, Inverse, and Contrapositive}
+
+Given an implication
+
+\[
+A \Rightarrow B,
+\]
+
+we can form three related statements.
+
+\begin{definition}\[Converse\]
+The \emph{converse} of $(A \Rightarrow B)$ is
+
+\[
+B \Rightarrow A.
+\]
+
+\end{definition}
+
+\begin{definition}\[Inverse\]
+The \emph{inverse} of $(A \Rightarrow B)$ is
+
+\[
+\neg A \Rightarrow \neg B.
+\]
+
+\end{definition}
+
+\begin{definition}\[Contrapositive\]
+The \emph{contrapositive} of $(A \Rightarrow B)$ is
+
+\[
+\neg B \Rightarrow \neg A.
+\]
+
+\end{definition}
+
+The converse and inverse are not usually equivalent to the original implication.
+However, the contrapositive is always equivalent to the original implication.
+
+\begin{theorem}\[Contrapositive\]
+The implication
+
+\[
+A \Rightarrow B
+\]
+
+is logically equivalent to its contrapositive
+
+\[
+\neg B \Rightarrow \neg A.
+\]
+
+\end{theorem}
+
+\begin{proof}
+The implication $(A \Rightarrow B)$ is false only in one case: when (A) is true
+and (B) is false.
+
+Now consider the contrapositive:
+
+\[
+\neg B \Rightarrow \neg A.
+\]
+
+This implication is false only when $(\neg B)$ is true and $(\neg A)$ is false.
+But $(\neg B)$ being true means that (B) is false, and $(\neg A)$ being false
+means that (A) is true.
+
+So the contrapositive is false exactly when (A) is true and (B) is false.
+
+Therefore, $(A \Rightarrow B)$ and $(\neg B \Rightarrow \neg A)$ are false in
+exactly the same situation. Hence they have the same truth value in every case,
+so they are logically equivalent.
+\end{proof}
+
+\subsection{Examples}
+
+\subsubsection{Geometric Example}
+
+Let
+
+\[
+A = \text{``It is a square''},
+\]
+
+and
+
+\[
+B = \text{``It is a rectangle with equal sides''}.
+\]
+
+Then:
+
+\begin{itemize}
+\item $(A \Rightarrow B)$: every square is a rectangle with equal sides;
+\item $(B \Rightarrow A)$: every rectangle with equal sides is a square.
+\end{itemize}
+
+Therefore,
+
+\[
+A \Leftrightarrow B.
+\]
+
+So being a square is equivalent to being a rectangle with equal sides.
+
+\subsubsection{Number Theory Example}
+
+Let
+
+\[
+A = \text{``$n$ is divisible by $6$''},
+\]
+
+and
+
+\[
+B = \text{``$n$ is divisible by $3$''}.
+\]
+
+Then:
+
+\[
+A \Rightarrow B
+\]
+
+is true, because every number divisible by (6) is also divisible by (3).
+
+However,
+
+\[
+B \Rightarrow A
+\]
+
+is false, because (9) is divisible by (3), but not by (6).
+
+So:
+
+\begin{itemize}
+\item (A) is sufficient for (B);
+\item (B) is necessary for (A);
+\item (A) and (B) are not logically equivalent.
+\end{itemize}
+
+\subsubsection{Example with Inequalities}
+
+Let
+
+\[
+A = \text{``$x>2$''},
+\]
+
+and
+
+\[
+B = \text{``$x>0$''}.
+\]
+
+Assume (x) is a real number. If (x>2), then certainly (x>0). Therefore,
+
+\[
+A \Rightarrow B.
+\]
+
+So (x>2) is sufficient for (x>0), and (x>0) is necessary for (x>2).
+
+But the converse is not true. For example,
+
+\[
+x=1
+\]
+
+satisfies (x>0), but does not satisfy (x>2).
+
+Thus,
+
+\[
+A \Rightarrow B,
+\]
+
+but not
+
+\[
+B \Rightarrow A.
+\]
+
+\subsection{The Importance of the Domain}
+
+When working with logical statements in mathematics, we must know the domain of
+the variables.
+
+For example, the statement
+
+\[
+x^2 > 0
+\]
+
+depends on what values of (x) are allowed.
+
+If (x) is a nonzero real number, then
+
+\[
+x^2>0
+\]
+
+is true.
+
+But if (x=0) is allowed, then the statement is false for (x=0).
+
+Therefore, before deciding whether an implication is true or false, we must know
+the universe of objects we are discussing.
+
+\subsection{Exercises}
+
+\begin{enumerate}
+\item Determine whether the following implication is true or false:
+
+```
+\[
+\text{``If $n$ is prime, then $n$ is odd.''}
+\]
+
+
+If it is false, give a counterexample.
+
+\item Determine whether the following implication is true or false:
+
+
+\[
+\text{``If $n$ is prime and $n>2$, then $n$ is odd.''}
+\]
+
+
+Identify the sufficient condition and the necessary condition.
+
+\item Let
+
+
+\[
+A = \text{``$x>2$''},
+\qquad
+B = \text{``$x>0$''}.
+\]
+
+
+Write the converse, inverse, and contrapositive of \(A \Rightarrow B\).
+
+\item Give an example of a condition that is necessary but not sufficient.
+
+\item Give two conditions that are both necessary for a third condition, but
+neither one alone is sufficient.
+
+\item Construct the truth table for the statement
+
+
+\[
+(A \Rightarrow B) \land (\neg A \Rightarrow B).
+\]
+
+
+What simpler statement is it logically equivalent to?
+
+\item Let
+
+
+\[
+A = \text{``$n$ is divisible by $4$''},
+\qquad
+B = \text{``$n$ is even''}.
+\]
+
+
+Decide whether \(A \Rightarrow B\) is true. Then decide whether
+\(B \Rightarrow A\) is true.
+
+\item Give an example of two statements \(A\) and \(B\) such that
+
+
+\[
+A \Leftrightarrow B.
+\]
+```
+
+\end{enumerate}

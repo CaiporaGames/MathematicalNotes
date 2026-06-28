@@ -1,12 +1,28 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}%
-\contentsline {section}{\numberline {2}Conjectures and Theorems}{1}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Basic Definitions}{1}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Examples from Number Theory}{1}{subsection.2.2}%
+\contentsline {section}{\numberline {2}Conjectures and Theorems}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Basic Definitions}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Examples from Number Theory}{2}{subsection.2.2}%
 \contentsline {subsection}{\numberline {2.3}Remarks}{2}{subsection.2.3}%
-\contentsline {section}{\numberline {3}Algebraic Identities}{2}{section.3}%
+\contentsline {section}{\numberline {3}Logical Implication, Necessary Conditions, and Sufficient Conditions}{2}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Introduction}{2}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Difference of Powers}{2}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Sum of Powers}{3}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Historical Notes}{3}{subsection.3.4}%
-\contentsline {subsection}{\numberline {3.5}Applications}{3}{subsection.3.5}%
-\contentsline {subsection}{\numberline {3.6}Curiosities}{3}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.2}Implication}{3}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Necessary and Sufficient Conditions}{3}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Example: Divisibility}{4}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Logical Equivalence}{5}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Truth Tables}{5}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Implication}{5}{subsubsection.3.6.1}%
+\contentsline {subsubsection}{\numberline {3.6.2}Equivalence}{6}{subsubsection.3.6.2}%
+\contentsline {subsection}{\numberline {3.7}Converse, Inverse, and Contrapositive}{6}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Examples}{7}{subsection.3.8}%
+\contentsline {subsubsection}{\numberline {3.8.1}Geometric Example}{7}{subsubsection.3.8.1}%
+\contentsline {subsubsection}{\numberline {3.8.2}Number Theory Example}{7}{subsubsection.3.8.2}%
+\contentsline {subsubsection}{\numberline {3.8.3}Example with Inequalities}{8}{subsubsection.3.8.3}%
+\contentsline {subsection}{\numberline {3.9}The Importance of the Domain}{8}{subsection.3.9}%
+\contentsline {subsection}{\numberline {3.10}Exercises}{8}{subsection.3.10}%
+\contentsline {section}{\numberline {4}Algebraic Identities}{9}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Introduction}{9}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Difference of Powers}{9}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Sum of Powers}{10}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Historical Notes}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Applications}{10}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Curiosities}{10}{subsection.4.6}%
