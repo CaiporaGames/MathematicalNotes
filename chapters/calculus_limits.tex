@@ -1,284 +1,1612 @@
 \section{Limits, Infinitesimals, Continuity, and the Derivative}
 
-\subsection{The Limit of a Variable}
+In arithmetic, we enlarged the number system whenever an equation could not be solved.
 
-\begin{definition}
-A constant number $a$ is said to be the \emph{limit} of a variable $x$ if, for every
-preassigned, arbitrarily small positive number $\varepsilon$, it is possible to
-indicate a value of the variable $x$ such that all subsequent values of $x$
-satisfy the inequality
+In calculus, a different kind of difficulty appears.
 
+Sometimes we want to understand a value that is not reached directly, but is approached.
 
-\[
-|x - a| < \varepsilon.
-\]
-
-
-\end{definition}
-
-\subsubsection*{Example}
-
-Consider the sequence $x_n = 1 + \frac{1}{n}$. We claim that $\lim_{n\to\infty} x_n = 1$.
-
-Compute:
-
+For example, consider the numbers
 
 \[
-|x_n - 1| = \left|1 + \frac{1}{n} - 1\right| = \frac{1}{n}.
+2,\quad 1.5,\quad 1.333\ldots,\quad 1.25,\quad 1.2,\quad \ldots
 \]
 
+They seem to move closer and closer to (1), but no term in this list is exactly (1).
 
+This raises a new question.
 
-To make this less than $\varepsilon$, solve:
+\begin{quote}
+How can a variable have a final tendency even if it never reaches that value?
+\end{quote}
 
+To study this question, consider the sequence
 
 \[
-\frac{1}{n} < \varepsilon \quad\Rightarrow\quad n > \frac{1}{\varepsilon}.
+x_n = 1+\frac{1}{n}.
 \]
 
-
-
-Thus, for any $\varepsilon > 0$, choosing $n > \frac{1}{\varepsilon}$ guarantees
-
+When (n=1),
 
 \[
-|x_n - 1| < \varepsilon.
+x_1=2.
 \]
 
-
-Hence the sequence converges to $1$.
-
-\subsection{The Limit of a Function}
-
-\begin{definition}
-Let $f(x)$ be a function. We say that the limit of $f(x)$ as $x$ approaches $a$
-is $b$, written
-
+When (n=2),
 
 \[
-\lim_{x\to a} f(x) = b,
+x_2=\frac{3}{2}.
 \]
 
-
-if for every $\varepsilon > 0$ there exists a $\delta > 0$ such that whenever, for all x,
-$0 < |x - a| < \delta$, the inequality
-
+When (n=10),
 
 \[
-|f(x) - b| < \varepsilon
+x_{10}=1.1.
 \]
 
-
-holds.
-\end{definition}
-
-This definition formalizes the idea that $f(x)$ can be made arbitrarily close to
-$b$ by taking $x$ sufficiently close to $a$.
-
-\subsection{Infinitesimals}
-
-\begin{definition}
-A function $\alpha = \alpha(x)$ is called \emph{infinitesimal} as $x\to a$ (or as
-$x\to\infty$) if
-
+When (n=1000),
 
 \[
-\lim_{x\to a} \alpha(x) = 0 \quad\text{or}\quad \lim_{x\to\infty} \alpha(x) = 0.
+x_{1000}=1.001.
 \]
 
+The values are not equal to (1), but they become closer and closer to (1).
 
-\end{definition}
+So the important object is not equality.
 
-\subsubsection*{Theorem 1}
+The important object is distance.
 
-If $y = b + \alpha(x)$, where $\alpha$ is infinitesimal, then
-
+The distance from $$(x_n)$$ to (1) is
 
 \[
-\lim y = b.
+|x_n-1|.
 \]
 
-
-
-Conversely, if $\lim y = b$, then $y$ may be written as $y = b + \alpha$, where
-$\alpha$ is infinitesimal.
-
-\paragraph{Proof.}
-From $y = b + \alpha$,
-
+Computing,
 
 \[
-|y - b| = |\alpha|.
+|x_n-1| = \left|1+\frac{1}{n}-1\right| \frac{1}{n}.
 \]
 
+Now we ask:
 
-Given any $\varepsilon > 0$, since $\alpha$ is infinitesimal, $|\alpha| <
-\varepsilon$, hence $|y - b| < \varepsilon$.
+\begin{quote}
+Can this distance be made smaller than any positive number chosen in advance?
+\end{quote}
 
-\subsubsection*{Theorem 2}
+Suppose someone gives us a small number $(\varepsilon>0)$.
 
-If $\alpha(x)$ approaches $0$ as $x\to a$ (or $x\to\infty$) and never becomes
-zero, then
-
+We want
 
 \[
-y = \frac{1}{\alpha(x)} \to \infty.
+|x_n-1|<\varepsilon.
 \]
-
-
-
-\paragraph{Proof.}
-Given any large $M > 0$, choose $|\alpha| < \frac{1}{M}$. Then
-
-
-\[
-\frac{1}{|\alpha|} > M.
-\]
-
-
-
-\subsubsection*{Theorem 3}
-
-The algebraic sum of a finite number of infinitesimals is an infinitesimal.
-
-\paragraph{Proof.}
-Let $u(x) = \alpha(x) + \beta(x)$, where both $\alpha$ and $\beta$ are
-infinitesimal. Then for sufficiently small $x$,
-
-
-\[
-|\alpha| < \frac{\varepsilon}{2}, \qquad |\beta| < \frac{\varepsilon}{2}.
-\]
-
-
-Thus,
-
-
-\[
-|u| = |\alpha + \beta| \le |\alpha| + |\beta| < \varepsilon.
-\]
-
-
-
-\subsubsection*{Theorem 4}
-
-The product of an infinitesimal $\alpha(x)$ and a bounded function $z(x)$ is
-infinitesimal.
-
-\paragraph{Proof.}
-If $|z(x)| < M$ and $|\alpha| < \frac{\varepsilon}{M}$, then
-
-
-\[
-|z(x)\alpha(x)| < M\cdot \frac{\varepsilon}{M} = \varepsilon.
-\]
-
-
-
-\subsection{Continuity of Functions}
-
-\begin{definition}
-A function $y = f(x)$ is \emph{continuous} at $x_0$ if it is defined in a
-neighborhood of $x_0$ and
-
-
-\[
-\lim_{x\to x_0} f(x) = f(x_0).
-\]
-
-
-\end{definition}
-
-Equivalently,
-
-
-\[
-\lim_{\Delta x\to 0} [f(x_0 + \Delta x) - f(x_0)] = 0.
-\]
-
-
 
 Since
 
-
 \[
-x_0 = \lim_{x\to x_0} x,
+|x_n-1|=\frac{1}{n},
 \]
 
-
-we may write
-
+we need
 
 \[
-\lim_{x\to x_0} f(x) = f(\lim_{x\to x_0} x).
+\frac{1}{n}<\varepsilon.
 \]
 
+This is true whenever
 
+\[
+n>\frac{1}{\varepsilon}.
+\]
 
-Thus, for continuous functions, limits may be computed by direct substitution.
+Therefore, no matter how small $(\varepsilon)$ is, we can choose (n) large enough so that all later values of $(x_n)$ are within distance $(\varepsilon)$ of (1).
+
+This phenomenon deserves a name.
+
+\begin{definition}
+A number (a) is called the \emph{limit} of a sequence $(x_n)$ if, for every
+$(\varepsilon>0)$, there exists an integer (N) such that whenever (n$>$N),
+
+\[
+|x_n-a|<\varepsilon.
+\]
+
+In this case we write
+
+\[
+\lim_{n\to\infty}x_n=a.
+\]
+\end{definition}
+
+Thus,
+
+\[
+\lim_{n\to\infty}\left(1+\frac{1}{n}\right)=1.
+\]
+
+\subsection{Problems}
+
+\subsubsection*{Problem 1}
+
+Consider
+
+\[
+x_n=\frac{1}{n}.
+\]
+
+What number does $(x_n)$ approach as $(n\to\infty)$?
+
+\subsubsection*{Problem 2}
+
+Show that
+
+\[
+\lim_{n\to\infty}\frac{1}{n}=0.
+\]
+
+That is, given $(\varepsilon>0)$, find a condition on (n) which guarantees
+
+\[
+\left|\frac{1}{n}-0\right|<\varepsilon.
+\]
+
+\subsubsection*{Problem 3}
+
+Consider
+
+\[
+x_n=3+\frac{2}{n}.
+\]
+
+What is the limit?
+
+Prove your answer using the definition.
+
+\section{The Limit of a Function}
+
+Sequences are not the only objects that approach values.
+
+A function can also approach a value.
+
+Consider
+
+\[
+f(x)=\frac{x^2-1}{x-1}.
+\]
+
+At first, something strange happens when (x=1).
+
+If we substitute (x=1), we get
+
+\[
+f(1)=\frac{1^2-1}{1-1}=\frac{0}{0},
+\]
+
+which is not defined.
+
+So the function has no value at (x=1).
+
+But what happens near (x=1)?
+
+Since
+
+\[
+x^2-1=(x-1)(x+1),
+\]
+
+we have, for $(x\neq 1)$,
+
+\[
+f(x)=\frac{(x-1)(x+1)}{x-1}=x+1.
+\]
+
+Therefore, when (x) is close to (1), the values of (f(x)) are close to
+
+\[
+1+1=2.
+\]
+
+For example,
+
+\[
+f(0.9)=1.9,
+\]
+
+\[
+f(0.99)=1.99,
+\]
+
+\[
+f(1.001)=2.001.
+\]
+
+Even though (f(1)) is not defined, the nearby values of (f(x)) clearly approach (2).
+
+This creates a new question.
+
+\begin{quote}
+Can a function approach a value at a point even if the function is not defined at that point?
+\end{quote}
+
+The answer is yes.
+
+This is why we need the limit of a function.
+
+\begin{definition}
+Let (f(x)) be a function. We say that
+
+\[
+\lim_{x\to a}f(x)=b
+\]
+
+if, for every $(\varepsilon>0)$, there exists a $(\delta>0)$ such that whenever
+
+\[
+0<|x-a|<\delta,
+\]
+
+we have
+
+\[
+|f(x)-b|<\varepsilon.
+\]
+\end{definition}
+
+The condition
+
+\[
+0<|x-a|
+\]
+
+means that (x) is allowed to approach (a), but (x) is not required to equal (a).
+
+This is essential.
+
+A limit is about nearby behavior.
+
+It is not necessarily about the value at the point.
+
+\subsection{Example}
+
+Let
+
+\[
+f(x)=\frac{x^2-1}{x-1}.
+\]
+
+For $(x\neq 1)$,
+
+\[
+f(x)=x+1.
+\]
+
+Therefore,
+
+\[
+\lim_{x\to 1}\frac{x^2-1}{x-1} = \lim_{x\to 1}(x+1) 2.
+\]
+
+So the function does not have a value at (x=1), but it has a limit there.
+
+\subsection{Problems}
+
+\subsubsection*{Problem 4}
+
+Compute
+
+\[
+\lim_{x\to 2}\frac{x^2-4}{x-2}.
+\]
+
+First simplify the expression for $(x\neq 2)$.
+
+\subsubsection*{Problem 5}
+
+Consider
+
+\[
+f(x)=
+\begin{cases}
+x+1, & x\neq 1,\\
+10, & x=1.
+\end{cases}
+\]
+
+What is
+
+\[
+\lim_{x\to 1}f(x)?
+\]
+
+What is (f(1))?
+
+Are they equal?
+
+\section{Infinitesimals}
+
+When (x) approaches (a), the difference
+
+\[
+x-a
+\]
+
+approaches (0).
+
+When (f(x)) approaches (b), the difference
+
+\[
+f(x)-b
+\]
+
+also approaches (0).
+
+So many limit questions reduce to studying quantities that become smaller and smaller.
+
+This suggests another name.
+
+\begin{definition}
+A function $(\alpha(x))$ is called an $\emph{infinitesimal}$ as $(x\to a)$ if
+
+\[
+\lim_{x\to a}\alpha(x)=0.
+\]
+
+Similarly, $(\alpha(x))$ is called an infinitesimal as $(x\to\infty)$ if
+
+\[
+\lim_{x\to\infty}\alpha(x)=0.
+\]
+\end{definition}
+
+For example,
+
+\[
+\frac{1}{x}
+\]
+
+is infinitesimal as $(x\to\infty)$, because
+
+\[
+\lim_{x\to\infty}\frac{1}{x}=0.
+\]
+
+Also,
+
+\[
+x-a
+\]
+
+is infinitesimal as $(x\to a)$, because
+
+\[
+\lim_{x\to a}(x-a)=0.
+\]
+
+\subsection{A Limit Written as a Constant Plus an Error}
+
+Suppose a variable (y) approaches (b).
+
+Then the difference
+
+\[
+y-b
+\]
+
+approaches (0).
+
+So (y-b) is infinitesimal.
+
+Let
+
+\[
+\alpha=y-b.
+\]
+
+Then
+
+\[
+y=b+\alpha.
+\]
+
+This means that a quantity approaches (b) exactly when it can be written as
+
+\[
+\text{constant}+\text{infinitesimal}.
+\]
 
 \subsubsection*{Theorem 1}
 
-If $f_1(x)$ and $f_2(x)$ are continuous at $x_0$, then $f_1(x) + f_2(x)$ is also
-continuous at $x_0$.
+A variable (y) satisfies
 
-\subsection{Continuity on an Interval}
+\[
+\lim y=b
+\]
+
+if and only if it can be written in the form
+
+\[
+y=b+\alpha,
+\]
+
+where $(\alpha)$ is infinitesimal.
+
+\paragraph{Proof.}
+
+If
+
+\[
+y=b+\alpha
+\]
+
+and $(\alpha\to 0)$, then
+
+\[
+y-b=\alpha.
+\]
+
+Therefore,
+
+\[
+|y-b|=|\alpha|.
+\]
+
+Since $(\alpha)$ is infinitesimal, $(|\alpha|)$ can be made smaller than any $(\varepsilon>0)$. Hence
+
+\[
+y\to b.
+\]
+
+Conversely, if $(y\to b)$, define
+
+\[
+\alpha=y-b.
+\]
+
+Then
+
+\[
+\alpha\to 0,
+\]
+
+so $(\alpha)$ is infinitesimal, and
+
+\[
+y=b+\alpha.
+\]
+
+\subsection{Algebra of Infinitesimals}
+
+Once infinitesimals appear, we must ask whether they behave well under ordinary operations.
+
+\begin{quote}
+If two quantities become negligible, does their sum also become negligible?
+\end{quote}
+
+\subsubsection*{Theorem 2}
+
+The sum of finitely many infinitesimals is infinitesimal.
+
+\paragraph{Proof.}
+
+Let
+
+\[
+u(x)=\alpha(x)+\beta(x),
+\]
+
+where both $(\alpha)$ and $(\beta)$ are infinitesimal.
+
+Given $(\varepsilon>0)$, choose (x) close enough to the limiting value so that
+
+\[
+|\alpha(x)|<\frac{\varepsilon}{2}
+\]
+
+and
+
+\[
+|\beta(x)|<\frac{\varepsilon}{2}.
+\]
+
+Then
+
+\[
+|u(x)| =|\alpha(x)+\beta(x)| \leq |\alpha(x)|+|\beta(x)| < \frac{\varepsilon}{2}+\frac{\varepsilon}{2} = \varepsilon.
+\]
+
+Thus (u(x)) is infinitesimal.
+
+\subsubsection*{Theorem 3}
+
+The product of an infinitesimal and a bounded function is infinitesimal.
+
+\paragraph{Proof.}
+
+Let $(\alpha(x))$ be infinitesimal and let (z(x)) be bounded.
+
+Since (z(x)) is bounded, there exists (M>0) such that
+
+\[
+|z(x)|\leq M.
+\]
+
+Given $(\varepsilon>0)$, choose (x) close enough so that
+
+\[
+|\alpha(x)|<\frac{\varepsilon}{M}.
+\]
+
+Then
+
+\[
+|z(x)\alpha(x)| = |z(x)|,|\alpha(x)| \leq M|\alpha(x)| < M\cdot \frac{\varepsilon}{M} = \varepsilon.
+\]
+
+Therefore $(z(x)\alpha(x))$ is infinitesimal.
+
+\subsubsection*{Theorem 4}
+
+If $(\alpha(x))$ is infinitesimal and $(\alpha(x)\neq 0)$, then
+
+\[
+\left|\frac{1}{\alpha(x)}\right|
+\]
+
+becomes arbitrarily large.
+
+\paragraph{Proof.}
+
+Let (M>0). Since $(\alpha(x)\to 0)$, we can choose (x) close enough so that
+
+\[
+|\alpha(x)|<\frac{1}{M}.
+\]
+
+Then
+
+\[
+\left|\frac{1}{\alpha(x)}\right| = \frac{1}{|\alpha(x)|} > M.
+\]
+
+So the reciprocal of a nonzero infinitesimal becomes arbitrarily large.
+
+\section{Continuity}
+
+We have seen that a function may have a limit at a point even if it is not defined there.
+
+We have also seen that a function may be defined at a point but have a value different from the nearby behavior.
+
+For example,
+
+\[
+f(x)=
+\begin{cases}
+x+1, & x\neq 1,\\
+10, & x=1.
+\end{cases}
+\]
+
+Then
+
+\[
+\lim_{x\to 1}f(x)=2,
+\]
+
+but
+
+\[
+f(1)=10.
+\]
+
+So the function has a break at (x=1).
+
+This raises another question.
+
+\begin{quote}
+When does the value of a function agree with the value approached by nearby points?
+\end{quote}
+
+This is the idea of continuity.
 
 \begin{definition}
-A function $f(x)$ is continuous on an interval $(a,b)$ if it is continuous at
-every point of the interval.
+A function (f(x)) is called $\emph{continuous}$ at $(x_0)$ if
+
+\[
+\lim_{x\to x_0}f(x)=f(x_0).
+\]
 \end{definition}
 
-\subsection{Properties of Continuous Functions}
+In words:
 
-\subsubsection*{Theorem 1 (Extreme Value Theorem)}
-If $f(x)$ is continuous on a closed interval $[a,b]$, then there exist points
-$x_1$ and $x_2$ in $[a,b]$ such that
+\begin{quote}
+A function is continuous at $(x_0)$ when the value it approaches is the value it actually has.
+\end{quote}
 
+\subsection{Continuity Written with Increments}
 
-\[
-f(x_1) \ge f(x) \quad\text{and}\quad f(x_2) \le f(x)
-\]
-
-
-for all $x$ in $[a,b]$. That is, $f$ attains its maximum and minimum on the
-interval.
-
-\subsection{Definition of the Derivative}
-
-Let $y = f(x)$ be continuous on an interval. For an increment $\Delta x$, define
-
+Let
 
 \[
-\Delta y = f(x + \Delta x) - f(x).
+x=x_0+\Delta x.
 \]
 
-
-
-Form the ratio
-
+Then
 
 \[
-\frac{\Delta y}{\Delta x} = \frac{f(x + \Delta x) - f(x)}{\Delta x}.
+\Delta x=x-x_0.
 \]
 
+As $(x\to x_0)$, we have
+
+\[
+\Delta x\to 0.
+\]
+
+The change in the function is
+
+\[
+\Delta y=f(x_0+\Delta x)-f(x_0).
+\]
+
+If (f) is continuous at $(x_0)$, then as $(\Delta x\to 0)$,
+
+\[
+\Delta y\to 0.
+\]
+
+Therefore, continuity can also be written as
+
+\[
+\lim_{\Delta x\to 0} \bigl(f(x_0+\Delta x)-f(x_0)\bigr) = 0.
+\]
+
+This says:
+
+\begin{quote}
+A small change in (x) produces a small change in (y).
+\end{quote}
+
+\subsection{Direct Substitution}
+
+If (f) is continuous at $(x_0)$, then
+
+\[
+\lim_{x\to x_0}f(x)=f(x_0).
+\]
+
+Since
+
+\[
+x_0=\lim_{x\to x_0}x,
+\]
+
+we may write informally
+
+\[
+\lim_{x\to x_0}f(x) = f\left(\lim_{x\to x_0}x\right).
+\]
+
+This is why continuous functions allow limits to be computed by direct substitution.
+
+\subsection{Problems}
+
+\subsubsection*{Problem 6}
+
+Let
+
+\[
+f(x)=x^2.
+\]
+
+Show that (f) is continuous at $(x_0=3)$.
+
+That is, show that
+
+\[
+\lim_{x\to 3}x^2=9.
+\]
+
+\subsubsection*{Problem 7}
+
+Let
+
+\[
+f(x)=
+\begin{cases}
+x^2, & x\neq 2,\\
+7, & x=2.
+\end{cases}
+\]
+
+Find
+
+\[
+\lim_{x\to 2}f(x).
+\]
+
+Find (f(2)).
+
+Is (f) continuous at (2)?
+
+\section{Continuity on an Interval}
+
+Continuity at one point is a local property.
+
+But sometimes we want a function to behave without breaks over a whole interval.
+
+\begin{definition}
+A function (f(x)) is continuous on an interval ((a,b)) if it is continuous at every point of that interval.
+\end{definition}
+
+If the interval is closed,
+
+\[
+[a,b]
+\],
+
+then (f) must be continuous at every interior point, continuous from the right at (a), and continuous from the left at (b).
+
+\section{Properties of Continuous Functions}
+
+Once continuity is understood as ``no breaks,'' we can ask what such functions are forced to do.
+
+For example, suppose a function is continuous on a closed interval
+
+\[
+[a,b].
+\]
+
+Can it grow forever inside this interval?
+
+No.
+
+The interval is finite, and the function has no breaks that allow it to escape.
+
+This leads to an important theorem.
+
+\subsubsection*{Theorem 5 (Extreme Value Theorem)}
+
+If (f(x)) is continuous on a closed interval ([a,b]), then there exist points ($x_1,x_2 \in$ [a,b]) such that
+
+\[
+f(x_1)\geq f(x)
+\]
+
+and
+
+\[
+f(x_2)\leq f(x)
+\]
+
+for every $(x\in [a,b])$.
+
+In other words, a continuous function on a closed interval attains a maximum and a minimum.
+
+\section{A Problem Before the Derivative: Fermat's Segment Problem}
+
+Before defining the derivative, let us begin with a problem.
+
+Suppose we have a segment (AB) of fixed length (L).
+
+Choose a point (C) between (A) and (B).
+
+Let
+
+\[
+AC=x.
+\]
+
+Then
+
+\[
+CB=L-x.
+\]
+
+We want to choose (C) so that the product
+
+\[
+AC\cdot CB
+\]
+
+is as large as possible.
+
+In symbols, we want to maximize
+
+\[
+P(x)=x(L-x).
+\]
+
+\subsection{First Experiments}
+
+If (C) is very close to (A), then (AC) is small.
+
+So
+
+\[
+AC\cdot CB
+\]
+
+is small.
+
+If (C) is very close to (B), then (CB) is small.
+
+Again,
+
+\[
+AC\cdot CB
+\]
+
+is small.
+
+So the maximum should happen somewhere in the middle.
+
+Let us test some values.
+
+If
+
+\[
+x=0,
+\]
+
+then
+
+\[
+P(0)=0(L-0)=0.
+\]
+
+If
+
+\[
+x=\frac L4,
+\]
+
+then
+
+\[
+P\left(\frac L4\right) = \frac L4\left(L-\frac L4\right) \frac L4\cdot \frac{3L}{4}\frac{3L^2}{16}.
+\]
+
+If
+
+\[
+x=\frac L2,
+\]
+
+then
+
+\[
+P\left(\frac L2\right) = \frac L2\left(L-\frac L2\right) \frac L2\cdot \frac L2 \frac{L^2}{4}.
+\]
+
+The middle seems better.
+
+But experiments are not proof.
+
+We need a method.
+
+\subsection{Moving the Point Slightly}
+
+Suppose the point (C) is already chosen.
+
+Now move it a very small distance (h) to the right.
+
+Then the new value of (AC) is
+
+\[
+x+h.
+\]
+
+The new value of (CB) is
+
+\[
+L-x-h.
+\]
+
+So the new product is
+
+\[
+P(x+h)=(x+h)(L-x-h).
+\]
+
+The old product was
+
+\[
+P(x)=x(L-x).
+\]
+
+The question becomes:
+
+\begin{quote}
+Did the product increase or decrease after this small movement?
+\end{quote}
+
+To answer this, compute the difference
+
+\[
+P(x+h)-P(x).
+\]
+
+We have
+
+\[
+P(x+h)-P(x) = (x+h)(L-x-h)-x(L-x).
+\]
+
+Expand the first product:
+
+\[
+(x+h)(L-x-h) = x(L-x-h)+h(L-x-h).
+\]
+
+So
+
+\[
+(x+h)(L-x-h) = x(L-x)-xh+h(L-x)-h^2.
+\]
+
+Therefore,
+
+\[
+P(x+h)-P(x) = x(L-x)-xh+h(L-x)-h^2-x(L-x).
+\]
+
+Canceling (x(L-x)), we get
+
+\[
+P(x+h)-P(x) = -xh+h(L-x)-h^2.
+\]
+
+Thus,
+
+\[
+P(x+h)-P(x) = h(L-2x)-h^2.
+\]
+
+\subsection{The Important Part of the Change}
+
+The change in the product is
+
+\[
+P(x+h)-P(x) = h(L-2x)-h^2.
+\]
+
+Now notice something important.
+
+If (h) is very small, then $(h^2)$ is much smaller than (h).
+
+For example, if
+
+\[
+h=0.01,
+\]
+
+then
+
+\[
+h^2=0.0001.
+\]
+
+So the term
+
+\[
+h(L-2x)
+\]
+
+is the main part of the change.
+
+The term
+
+\[
+-h^2
+\]
+
+is smaller.
+
+This suggests that the expression
+
+\[
+L-2x
+\]
+
+controls whether the product first wants to increase or decrease.
+
+\subsection{The Balance Condition}
+
+At the maximum, moving slightly to the right should not improve the product.
+
+Also, moving slightly to the left should not improve the product.
+
+So at the best point, there should be no first-order advantage in either direction.
+
+That means the main part of the change must vanish:
+
+\[
+L-2x=0.
+\]
+
+Solving,
+
+\[
+2x=L.
+\]
+
+Hence
+
+\[
+x=\frac L2.
+\]
+
+Therefore,
+
+\[
+AC=\frac L2
+\]
+
+and
+
+\[
+CB=\frac L2.
+\]
+
+So the product $(AC\cdot CB)$ is largest when (C) is the midpoint of (AB).
+
+\subsection{What Was Discovered}
+
+We did not begin with the derivative.
+
+We began with a concrete problem.
+
+Then we asked what happens when the input changes slightly.
+
+This forced us to compare
+
+\[
+P(x+h)
+\]
+
+with
+
+\[
+P(x).
+\]
+
+The difference
+
+\[
+P(x+h)-P(x)
+\]
+
+measured the change in the quantity.
+
+Then we found that the most important part of the change was the part proportional to (h):
+
+\[
+h(L-2x).
+\]
+
+At the maximum, this first-order part had to disappear.
+
+This is the beginning of the derivative.
+
+\begin{quote}
+The derivative is born from the attempt to understand which part of a small change controls increase and decrease.
+\end{quote}
+
+\subsection{Challenge}
+
+Try the same idea with
+
+\[
+P(x)=x^2.
+\]
+
+Compute
+
+\[
+P(x+h)-P(x).
+\]
+
+Which term is proportional to (h)?
+
+Which term is proportional to $(h^2)$?
+
+What expression controls the first-order change?
+
+\subsection{Challenge}
+
+Now try
+
+\[
+P(x)=x^3.
+\]
+
+Compute
+
+\[
+P(x+h)-P(x).
+\]
+
+Expand:
+
+\[
+(x+h)^3-x^3.
+\]
+
+Which part is proportional to (h)?
+
+What expression appears multiplying (h)?
+
+This expression will later become the derivative of $(x^3)$.
 
 
-\begin{definition}[Derivative]
+\section{The Need for a Derivative}
+
+Continuity tells us when a function has no breaks.
+
+But continuity does not tell us how fast the function changes.
+
+Consider a moving object.
+
+At time (x), suppose its position is
+
+\[
+y=f(x).
+\]
+
+If time changes from (x) to $(x+\Delta x)$, then the position changes from
+
+\[
+f(x)
+\]
+
+to
+
+\[
+f(x+\Delta x).
+\]
+
+So the change in position is
+
+\[
+\Delta y=f(x+\Delta x)-f(x).
+\]
+
+The average rate of change is
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{f(x+\Delta x)-f(x)}{\Delta x}.
+\]
+
+This is the slope of the secant line between the two points
+
+\[
+(x,f(x))
+\]
+
+and
+
+\[
+(x+\Delta x,f(x+\Delta x)).
+\]
+
+But now we ask a sharper question.
+
+\begin{quote}
+What is the rate of change at one instant?
+\end{quote}
+
+An instant has no length, so we cannot simply divide by zero.
+
+Instead, we take smaller and smaller intervals and look for the value approached by the average rates of change.
+
+This creates the derivative.
+
+\begin{definition}
+Let (y=f(x)). For an increment $(\Delta x\neq 0)$, define
+
+\[
+\Delta y=f(x+\Delta x)-f(x).
+\]
+
 If the limit
 
-
 \[
-\lim_{\Delta x\to 0} \frac{\Delta y}{\Delta x}
+\lim_{\Delta x\to 0}
+\frac{\Delta y}{\Delta x}
 \]
 
-
-exists, it is called the \emph{derivative} of $y = f(x)$ and is denoted by
-
+exists, then this limit is called the \emph{derivative} of (f) at (x), and is denoted by
 
 \[
-y' = f'(x).
+f'(x)
 \]
 
+or
 
+\[
+\frac{dy}{dx}.
+\]
+
+Thus,
+
+\[
+f'(x) = \lim_{\Delta x\to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}.
+\]
 \end{definition}
+
+\subsection{Example: The Derivative of $(x^2)$}
+
+Let
+
+\[
+f(x)=x^2.
+\]
+
+Then
+
+\[
+f(x+\Delta x)=(x+\Delta x)^2.
+\]
+
+So
+
+\[
+\Delta y = f(x+\Delta x)-f(x) (x+\Delta x)^2-x^2.
+\]
+
+Expanding,
+
+\[
+(x+\Delta x)^2=x^2+2x\Delta x+(\Delta x)^2.
+\]
+
+Therefore,
+
+\[
+\Delta y = x^2+2x\Delta x+(\Delta x)^2-x^2 2x\Delta x+(\Delta x)^2.
+\]
+
+Now divide by $(\Delta x)$:
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{2x\Delta x+(\Delta x)^2}{\Delta x} 2x+\Delta x.
+\]
+
+Taking the limit as $(\Delta x\to 0)$,
+
+\[
+f'(x) = \lim_{\Delta x\to 0}(2x+\Delta x)2x.
+\]
+
+Thus,
+
+\[
+\frac{d}{dx}(x^2)=2x.
+\]
+
+\subsection{What We Have Discovered}
+
+We began with quantities that approach values without necessarily reaching them.
+
+This forced us to define limits.
+
+Then we noticed that many differences approach zero.
+
+This forced us to name infinitesimals.
+
+Then we asked when the approached value of a function equals the actual value.
+
+This forced us to define continuity.
+
+Finally, we asked how to measure instantaneous change.
+
+This forced us to define the derivative.
+
+\begin{quote}
+The derivative is not a formula first. It is the answer to the problem of measuring change at an instant.
+\end{quote}
+
+\subsection{Problems}
+
+\subsubsection*{Problem 8}
+
+Using the definition of derivative, compute the derivative of
+
+\[
+f(x)=x.
+\]
+
+\subsubsection*{Problem 9}
+
+Using the definition of derivative, compute the derivative of
+
+\[
+f(x)=x^3.
+\]
+
+\subsubsection*{Problem 10}
+
+Let
+
+\[
+f(x)=|x|.
+\]
+
+Compute the average rate of change
+
+\[
+\frac{f(0+\Delta x)-f(0)}{\Delta x}.
+\]
+
+What happens when $(\Delta x>0)$?
+
+What happens when $(\Delta x<0)$?
+
+Does the derivative exist at (x=0)?
+<<<<<<< HEAD
+
+
+\section{A Problem Before the Integral: Measuring a Curved Area}
+
+The derivative was born from a question:
+
+\begin{quote}
+What is the instantaneous rate of change?
+\end{quote}
+
+Now we ask an opposite question.
+
+Suppose many small quantities are being added together.
+
+\begin{quote}
+How can many tiny pieces produce a total quantity?
+\end{quote}
+
+This question leads to the integral.
+
+\subsection{The Area Problem}
+
+Consider the function
+
+\[
+f(x)=x^2.
+\]
+
+We want to find the area under the curve from (x=0) to (x=1).
+
+That is, we want the area of the region bounded by
+
+\[
+y=x^2,
+\]
+
+the (x)-axis, and the vertical lines
+
+\[
+x=0
+\]
+
+and
+
+\[
+x=1.
+\]
+
+For a rectangle, area is easy:
+
+\[
+\text{area}=\text{base}\cdot\text{height}.
+\]
+
+But this region is not a rectangle.
+
+Its upper boundary is curved.
+
+So we ask:
+
+\begin{quote}
+Can a curved region be approximated by many thin rectangles?
+\end{quote}
+
+\subsection{First Approximation}
+
+Divide the interval ([0,1]) into (n) equal parts.
+
+Each small interval has width
+
+\[
+\Delta x=\frac{1}{n}.
+\]
+
+The division points are
+
+\[
+0,\frac{1}{n},\frac{2}{n},\frac{3}{n},\ldots,\frac{n}{n}.
+\]
+
+On the (k)-th interval, use the right endpoint
+
+\[
+x_k=\frac{k}{n}.
+\]
+
+The height of the rectangle is then
+
+\[
+f(x_k)=\left(\frac{k}{n}\right)^2.
+\]
+
+So the area of the (k)-th rectangle is
+
+\[
+f(x_k)\Delta x = \left(\frac{k}{n}\right)^2\frac{1}{n}.
+\]
+
+Therefore, the total approximate area is
+
+\[
+A_n=
+\sum_{k=1}^{n}
+\left(\frac{k}{n}\right)^2\frac{1}{n}.
+\]
+
+Simplifying,
+
+\[
+A_n=
+\frac{1}{n^3}
+\sum_{k=1}^{n}k^2.
+\]
+
+Now use the known formula
+
+\[
+\sum_{k=1}^{n}k^2 = \frac{n(n+1)(2n+1)}{6}.
+\]
+
+Thus,
+
+\[
+A_n=
+\frac{1}{n^3}\cdot
+\frac{n(n+1)(2n+1)}{6}.
+\]
+
+So
+
+\[
+A_n=
+\frac{(n+1)(2n+1)}{6n^2}.
+\]
+
+Expanding,
+
+\[
+A_n=
+\frac{2n^2+3n+1}{6n^2}.
+\]
+
+Therefore,
+
+\[
+A_n=
+\frac{1}{3}+\frac{1}{2n}+\frac{1}{6n^2}.
+\]
+
+As $(n\to\infty)$,
+
+\[
+\frac{1}{2n}\to 0
+\]
+
+and
+
+\[
+\frac{1}{6n^2}\to 0.
+\]
+
+Hence,
+
+\[
+\lim_{n\to\infty}A_n = \frac{1}{3}.
+\]
+
+So the area under $(y=x^2)$ from (0) to (1) is
+
+\[
+\frac{1}{3}.
+\]
+
+\subsection{What Was Discovered}
+
+We did not begin with the integral.
+
+We began with a problem:
+
+\begin{quote}
+How do we measure an area whose boundary is curved?
+\end{quote}
+
+A curved region was difficult, but rectangles were easy.
+
+So we replaced the curved region by many rectangles.
+
+Each rectangle had area
+
+\[
+f(x_k)\Delta x.
+\]
+
+Adding all rectangles gave
+
+\[
+\sum_{k=1}^{n} f(x_k)\Delta x.
+\]
+
+Then we made the rectangles thinner and thinner by taking
+
+\[
+n\to\infty.
+\]
+
+This suggests a new object.
+
+\begin{definition}
+Let (f(x)) be a function on ([a,b]). Divide the interval into (n) small parts of width
+
+\[
+\Delta x=\frac{b-a}{n}.
+\]
+
+Choose points $(x_k)$ in each small interval. If the limit
+
+\[
+\lim_{n\to\infty}
+\sum_{k=1}^{n} f(x_k)\Delta x
+\]
+
+exists, then this limit is called the \emph{definite integral} of (f) from (a) to (b), and is written
+
+\[
+\int_a^b f(x),dx.
+\]
+\end{definition}
+
+Thus, the symbol
+
+\[
+\int_a^b f(x),dx
+\]
+
+means:
+
+\begin{quote}
+the limit of a sum of infinitely many infinitesimal contributions.
+\end{quote}
+
+\subsection{The Integral of $(x^2)$}
+
+From our computation,
+
+\[
+\int_0^1 x^2,dx = \frac{1}{3}.
+\]
+
+This was not magic.
+
+It came from the limit
+
+\[
+\int_0^1 x^2,dx = \lim_{n\to\infty}
+\sum_{k=1}^{n}
+\left(\frac{k}{n}\right)^2\frac{1}{n}.
+\]
+
+So the integral is born from approximation.
+
+\begin{quote}
+The integral is not first a formula. It is the answer to the problem of measuring a total made from many tiny parts.
+\end{quote}
+=======
+>>>>>>> eeca8e76b26e64e46bf02563453f92c0884596ae
