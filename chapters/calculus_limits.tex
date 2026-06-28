@@ -1,0 +1,284 @@
+\section{Limits, Infinitesimals, Continuity, and the Derivative}
+
+\subsection{The Limit of a Variable}
+
+\begin{definition}
+A constant number $a$ is said to be the \emph{limit} of a variable $x$ if, for every
+preassigned, arbitrarily small positive number $\varepsilon$, it is possible to
+indicate a value of the variable $x$ such that all subsequent values of $x$
+satisfy the inequality
+
+
+\[
+|x - a| < \varepsilon.
+\]
+
+
+\end{definition}
+
+\subsubsection*{Example}
+
+Consider the sequence $x_n = 1 + \frac{1}{n}$. We claim that $\lim_{n\to\infty} x_n = 1$.
+
+Compute:
+
+
+\[
+|x_n - 1| = \left|1 + \frac{1}{n} - 1\right| = \frac{1}{n}.
+\]
+
+
+
+To make this less than $\varepsilon$, solve:
+
+
+\[
+\frac{1}{n} < \varepsilon \quad\Rightarrow\quad n > \frac{1}{\varepsilon}.
+\]
+
+
+
+Thus, for any $\varepsilon > 0$, choosing $n > \frac{1}{\varepsilon}$ guarantees
+
+
+\[
+|x_n - 1| < \varepsilon.
+\]
+
+
+Hence the sequence converges to $1$.
+
+\subsection{The Limit of a Function}
+
+\begin{definition}
+Let $f(x)$ be a function. We say that the limit of $f(x)$ as $x$ approaches $a$
+is $b$, written
+
+
+\[
+\lim_{x\to a} f(x) = b,
+\]
+
+
+if for every $\varepsilon > 0$ there exists a $\delta > 0$ such that whenever, for all x,
+$0 < |x - a| < \delta$, the inequality
+
+
+\[
+|f(x) - b| < \varepsilon
+\]
+
+
+holds.
+\end{definition}
+
+This definition formalizes the idea that $f(x)$ can be made arbitrarily close to
+$b$ by taking $x$ sufficiently close to $a$.
+
+\subsection{Infinitesimals}
+
+\begin{definition}
+A function $\alpha = \alpha(x)$ is called \emph{infinitesimal} as $x\to a$ (or as
+$x\to\infty$) if
+
+
+\[
+\lim_{x\to a} \alpha(x) = 0 \quad\text{or}\quad \lim_{x\to\infty} \alpha(x) = 0.
+\]
+
+
+\end{definition}
+
+\subsubsection*{Theorem 1}
+
+If $y = b + \alpha(x)$, where $\alpha$ is infinitesimal, then
+
+
+\[
+\lim y = b.
+\]
+
+
+
+Conversely, if $\lim y = b$, then $y$ may be written as $y = b + \alpha$, where
+$\alpha$ is infinitesimal.
+
+\paragraph{Proof.}
+From $y = b + \alpha$,
+
+
+\[
+|y - b| = |\alpha|.
+\]
+
+
+Given any $\varepsilon > 0$, since $\alpha$ is infinitesimal, $|\alpha| <
+\varepsilon$, hence $|y - b| < \varepsilon$.
+
+\subsubsection*{Theorem 2}
+
+If $\alpha(x)$ approaches $0$ as $x\to a$ (or $x\to\infty$) and never becomes
+zero, then
+
+
+\[
+y = \frac{1}{\alpha(x)} \to \infty.
+\]
+
+
+
+\paragraph{Proof.}
+Given any large $M > 0$, choose $|\alpha| < \frac{1}{M}$. Then
+
+
+\[
+\frac{1}{|\alpha|} > M.
+\]
+
+
+
+\subsubsection*{Theorem 3}
+
+The algebraic sum of a finite number of infinitesimals is an infinitesimal.
+
+\paragraph{Proof.}
+Let $u(x) = \alpha(x) + \beta(x)$, where both $\alpha$ and $\beta$ are
+infinitesimal. Then for sufficiently small $x$,
+
+
+\[
+|\alpha| < \frac{\varepsilon}{2}, \qquad |\beta| < \frac{\varepsilon}{2}.
+\]
+
+
+Thus,
+
+
+\[
+|u| = |\alpha + \beta| \le |\alpha| + |\beta| < \varepsilon.
+\]
+
+
+
+\subsubsection*{Theorem 4}
+
+The product of an infinitesimal $\alpha(x)$ and a bounded function $z(x)$ is
+infinitesimal.
+
+\paragraph{Proof.}
+If $|z(x)| < M$ and $|\alpha| < \frac{\varepsilon}{M}$, then
+
+
+\[
+|z(x)\alpha(x)| < M\cdot \frac{\varepsilon}{M} = \varepsilon.
+\]
+
+
+
+\subsection{Continuity of Functions}
+
+\begin{definition}
+A function $y = f(x)$ is \emph{continuous} at $x_0$ if it is defined in a
+neighborhood of $x_0$ and
+
+
+\[
+\lim_{x\to x_0} f(x) = f(x_0).
+\]
+
+
+\end{definition}
+
+Equivalently,
+
+
+\[
+\lim_{\Delta x\to 0} [f(x_0 + \Delta x) - f(x_0)] = 0.
+\]
+
+
+
+Since
+
+
+\[
+x_0 = \lim_{x\to x_0} x,
+\]
+
+
+we may write
+
+
+\[
+\lim_{x\to x_0} f(x) = f(\lim_{x\to x_0} x).
+\]
+
+
+
+Thus, for continuous functions, limits may be computed by direct substitution.
+
+\subsubsection*{Theorem 1}
+
+If $f_1(x)$ and $f_2(x)$ are continuous at $x_0$, then $f_1(x) + f_2(x)$ is also
+continuous at $x_0$.
+
+\subsection{Continuity on an Interval}
+
+\begin{definition}
+A function $f(x)$ is continuous on an interval $(a,b)$ if it is continuous at
+every point of the interval.
+\end{definition}
+
+\subsection{Properties of Continuous Functions}
+
+\subsubsection*{Theorem 1 (Extreme Value Theorem)}
+If $f(x)$ is continuous on a closed interval $[a,b]$, then there exist points
+$x_1$ and $x_2$ in $[a,b]$ such that
+
+
+\[
+f(x_1) \ge f(x) \quad\text{and}\quad f(x_2) \le f(x)
+\]
+
+
+for all $x$ in $[a,b]$. That is, $f$ attains its maximum and minimum on the
+interval.
+
+\subsection{Definition of the Derivative}
+
+Let $y = f(x)$ be continuous on an interval. For an increment $\Delta x$, define
+
+
+\[
+\Delta y = f(x + \Delta x) - f(x).
+\]
+
+
+
+Form the ratio
+
+
+\[
+\frac{\Delta y}{\Delta x} = \frac{f(x + \Delta x) - f(x)}{\Delta x}.
+\]
+
+
+
+\begin{definition}[Derivative]
+If the limit
+
+
+\[
+\lim_{\Delta x\to 0} \frac{\Delta y}{\Delta x}
+\]
+
+
+exists, it is called the \emph{derivative} of $y = f(x)$ and is denoted by
+
+
+\[
+y' = f'(x).
+\]
+
+
+\end{definition}
