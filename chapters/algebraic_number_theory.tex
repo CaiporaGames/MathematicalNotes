@@ -1,0 +1,647 @@
+
+\section{Algebraic Number Theory}
+\subsection{Why New Numbers Appear}
+
+The natural numbers are sufficient to solve equations such as
+
+\[
+x+3=5.
+\]
+
+However, they are not sufficient to solve
+
+\[
+x+5=3.
+\]
+
+This leads to the introduction of negative numbers.
+
+Likewise, integers are not sufficient to solve
+
+\[
+2x=1,
+\]
+
+which motivates the rational numbers.
+
+The rational numbers are not sufficient to solve
+
+\[
+x^2=2,
+\]
+
+which motivates the real numbers.
+
+The real numbers are not sufficient to solve
+
+\[
+x^2+1=0,
+\]
+
+which motivates the complex numbers.
+
+A recurring pattern appears throughout mathematics:
+
+\begin{quote}
+When an equation has no solution in the current number system, we enlarge the system.
+\end{quote}
+
+The study of numbers is therefore inseparable from the study of equations.
+
+\section{A New Number}
+
+Consider the equation
+
+\[
+x^2+5=0.
+\]
+
+Introduce a symbol (u) satisfying
+
+\[
+u^2=-5.
+\]
+
+We denote this new number system by
+
+\[
+\mathbb Z[u]
+=
+\{a+bu : a,b\in\mathbb Z\}.
+\]
+
+Since \(u^2=-5\), we may also write
+
+\[
+\mathbb Z[\sqrt{-5}].
+\]
+
+
+We now allow expressions of the form
+
+\[
+a+bu,
+\]
+
+where $(a,b\in\mathbb Z)$.
+
+Examples are
+
+\[
+3+u,\qquad 7-2u,\qquad 5.
+\]
+
+This creates a new arithmetic world containing the integers together with a solution of
+
+\[
+x^2+5=0.
+\]
+
+\section{An Unexpected Observation}
+
+In the integers, the number
+
+\[
+6
+\]
+
+has the factorization
+
+\[
+6=2\cdot3.
+\]
+
+
+Using $(u^2=-5)$, we compute
+
+\[
+(1-u)(1+u)=1-u^2=1-(-5)=6.
+\]
+
+Therefore
+
+\[
+6=(1-u)(1+u).
+\]
+
+At first sight this appears harmless.
+
+Is this really a different factorization of \(6\)?
+
+The next problems investigate this question.
+
+This raises a fundamental question:
+
+\begin{quote}
+Can arithmetic behave differently in different number systems?
+\end{quote}
+
+The remainder of this book is an attempt to understand this phenomenon.
+
+\subsection{Problem 1}
+Compute: 
+\[(1+u)(1-u)\]
+Use the fact:
+\[u^2 = -5\]
+
+What ordinary integer do you obtain?
+
+\subsection{Problem 2}
+Compute:
+\[(2+u)(2-u)\]
+
+\subsection{Problem 3}
+Look the number:
+\[6 = 3.2\]
+
+Now compare with your answers from problems 1 and 2.
+
+\subsection{Problem 4}
+Can 2 divide 1+u such that:
+ \[1+u = 2(a+bu)\]?
+
+ \subsection{Problem 5}
+Can 3 divide 1+u such that:
+ \[1+u = 3(a+bu)\]?
+
+Surprisingly, none of the factors appears to divide the others.
+
+This suggests that
+
+\[
+6 = 2\cdot3=(1-u)(1+u)
+\]
+
+may genuinely be two different factorizations of the same number.
+
+If this is true, then unique factorization has failed.
+
+\section{Norm}
+
+The factorization
+
+\[
+(a+bu)(a-bu)
+=
+a^2+5b^2
+\]
+
+produces an ordinary integer.
+
+This suggests associating to each number \(a+bu\) the integer
+
+\[
+N(a+bu)=a^2+5b^2,
+\]
+a ordinary integer, that we will call $\textit{Norm}$ and use the symbol $\textit{N}$ to compute it.
+The norm allows us to measure elements of \(\mathbb Z[u]\) using ordinary integers.
+
+Since
+
+\[
+N(a+bu)
+=
+(a+bu)(a-bu),
+\]
+
+many questions about factorization in \(\mathbb Z[u]\) can be translated into questions about ordinary integers.
+\subsection{Problem 6}
+
+Prove that
+
+\[
+N(\alpha\beta)
+=
+N(\alpha)N(\beta).
+\]
+
+This property is called multiplicativity of the norm.
+
+\subsection{Problem 7}
+Compute the norms:
+\begin{align*}
+N(1+u) \\
+N(2) \\
+N(3)
+\end{align*}
+
+Now suppose
+
+\[
+1+u=\alpha\beta.
+\]
+
+Using the multiplicativity of the norm,
+
+\[
+N(1+u)
+=
+N(\alpha)N(\beta).
+\]
+
+Since
+
+\[
+N(1+u)
+=
+1^2+5(1)^2
+=
+6,
+\]
+
+we obtain
+
+\[
+6=N(\alpha)N(\beta).
+\]
+
+The positive factorizations of \(6\) are
+
+\[
+1\cdot6
+\]
+
+and
+
+\[
+2\cdot3.
+\]
+
+Can any element of \(\mathbb Z[u]\) have norm \(2\)?
+
+Can any element of \(\mathbb Z[u]\) have norm \(3\)?
+
+If not, the only possibility is
+
+\[
+N(\alpha)=1
+\]
+
+or
+
+\[
+N(\beta)=1.
+\]
+
+A norm equal to \(1\) corresponds to a unit.
+
+Therefore one factor must be a unit, and \(1+u\) is irreducible.
+
+\begin{quote}
+    We said irreducible not prime.
+\end{quote}
+
+
+\subsection{Problem 8}
+In ordinary integers, if $\textit{p}$ is prime and
+    \[p|ab\]
+
+then
+    \[p|a\]
+
+or
+
+    \[p|b\]
+
+Now test this here with:
+    \[3|(1+u)(1-u)\]
+
+Why does 3 divide the product but not the either factor?
+
+\begin{quote}
+    Answering this makes you start understanding why we do not use the prime word rather 
+    irreducible.
+\end{quote}
+
+    \begin{align*}
+        1. \text{What should irreducible mean?} \\
+        2. \text{What should prime mean?  }      
+    \end{align*}
+
+\section{irreducible and Primes}
+
+\subsection{irreducibles}
+
+From our observations we can define that a number \textit{r} is irreducible if whenever
+    \[r=ab\]
+one of the factors is a unit, 1 or -1.
+In the world of a+bu the only units are 1 and -1.
+
+Thus 1+u is irreducible because every factorization has unit factor.
+
+\subsection{Primes}
+
+Now for prime using our new world $\mathbb{Z}[\sqrt{-5}]$
+we already discover that 3 fails because it is irreducible but not
+prime.
+
+Remember that a number $\textit{p}$ is prime if whenever:
+    \[p|ab\]
+
+then:
+    \[p|a\]
+
+or \[p|b\]
+
+Notice that this definition does not mention factorization of p itself. It is a divisibilty
+property.
+
+Now historically in ordinary integers:
+    \begin{quote}
+        irreducible = prime
+    \end{quote}
+
+But in our new world $\mathbb{Z}[\sqrt{-5}]$ they are different.
+
+\subsection{Problem 9}
+Can you prove that 1+u, 1-u and 2 are irreducible?
+
+Hint: Use the norm N.
+
+
+\section{Where We Are}
+
+We began by enlarging the integers in order to solve an equation.
+
+The new numbers behaved naturally under addition and multiplication.
+
+Yet something unexpected occurred: a familiar theorem about unique factorization appeared to fail.
+
+The number
+
+\[
+6 = 2\cdot3 = (1-u)(1+u)
+\]
+
+seems to admit two genuinely different factorizations.
+
+The remainder of this book investigates how arithmetic changes when the number system changes.
+
+\vspace{0.5cm}
+
+What should we do next?
+
+\begin{itemize}
+\item Redefine primes?
+\item Redefine factorization?
+\item Search for a new object that factors uniquely even when numbers do not?
+\end{itemize}
+
+The third possibility turns out to be the most fruitful.
+
+After all, the numbers themselves seem perfectly reasonable.
+
+Addition works.
+
+Multiplication works.
+
+The norm works.
+
+What appears to have failed is factorization.
+
+This suggests a new question.
+
+\begin{quote}
+Is there a hidden object behind numbers that still factors uniquely?
+\end{quote}
+
+Let us return to the mysterious identity
+
+\[
+6=2\cdot3=(1+u)(1-u).
+\]
+
+Imagine there were objects
+
+\[
+A,\quad B,\quad C,\quad D
+\]
+
+such that
+
+\[
+2=AB,
+\]
+
+\[
+3=CD,
+\]
+
+and
+
+\[
+1+u=AC,
+\]
+
+\[
+1-u=BD.
+\]
+
+Then we would obtain
+
+\[
+6 = 2\cdot3 = (AB)(CD) =
+ABCD
+\]
+
+and also
+
+\[
+6 = (1+u)(1-u) = (AC)(BD) = ABCD.
+\]
+
+Suddenly the factorization becomes unique again.
+
+We do not know whether such objects actually exist.
+
+We only know what properties they would need to have.
+
+This gives us a clue.
+
+\begin{quote}
+Perhaps numbers are only shadows of a finer factorization system.
+\end{quote}
+
+The next step is to investigate divisibility more carefully.
+
+\section{Divisibility Sets}
+
+Consider all numbers divisible by (2).
+
+In ordinary integers this gives
+
+\[
+{\ldots,-4,-2,0,2,4,\ldots}.
+\]
+
+What does the analogous set look like in $\mathbb Z[\sqrt{-5}]$?
+
+\subsection{Problem 10}
+
+Assume a+bu is divisible by 2.
+
+Then
+
+\[
+a+bu=2(c+du).
+\]
+
+What conditions must (a) and (b) satisfy?
+
+\subsection{Problem 11}
+
+Describe explicitly the set of all numbers divisible by 2.
+
+Call this set \{2\},
+
+\subsection{Problem 12}
+
+Suppose
+
+\[
+x,y\in\{2\}.
+\]
+
+Show that
+
+\[
+x+y\in\{2\}.
+\]
+
+In other words, the sum of two elements divisible by 2 is again divisible by 2.
+
+\subsection{Problem 13}
+
+Suppose
+
+\[
+x\in\{2\}
+\]
+
+and
+
+\[
+r\in\mathbb Z[\sqrt{-5}].
+\]
+
+Show that
+
+\[
+rx\in\{2\}.
+\]
+
+Thus multiplying by any element of the $\mathbb Z[\sqrt{-5}]$ keeps us inside the set.
+
+We have discovered a remarkable kind of subset.
+
+It is closed under addition.
+
+It is also stable under multiplication by arbitrary elements of the $\mathbb Z[\sqrt{-5}]$.
+
+Such subsets appear naturally whenever we study divisibility.
+
+Because they occur so frequently, they deserve a name.
+
+\section{Ideals}
+
+An $\textit{ideal}$ is a subset I of ($\mathbb Z[\sqrt{-5}]$) satisfying:
+
+\begin{enumerate}
+\item If x,y$\in$ I, then x+y$\in$ I.
+\item If x$\in$ I and r$\in\mathbb Z[\sqrt{-5}$], then rx$\in $I.
+\end{enumerate}
+
+The set:
+
+\[
+\{2\} = \{2(a+bu):a,b\in\mathbb Z\}
+\]
+
+is our first example.
+
+Likewise we may consider
+
+\[
+\{3\},
+\]
+
+the set of all numbers divisible by 3,
+
+and
+
+\[
+\{(1+u)\},
+\]
+
+the set of all numbers divisible by (1+u).
+
+At first sight these sets seem to contain less information than the numbers themselves.
+
+Surprisingly, the opposite is true.
+
+As we shall discover, ideals remember factorization more faithfully than numbers do.
+
+\section{Prime Ideals}
+
+Now to save factorization again we start thinking what would be a prime ideal?
+At the beginning of mathematics, numbers seemed fundamental but after enough algebraic
+number theory, one starts thinking:
+
+    \begin{quote}
+        The polynomial is primary and the numbers are shadows of the polynomial.
+    \end{quote}
+
+For example:
+    \[x^2+1\]
+
+creates the Gaussian integers.
+
+    \[x^2+5\]
+
+creates $\mathbb{Z}[\sqrt{-5}]$.
+
+    \[x^2-2\]
+
+creates $\mathbb{Z}[\sqrt{2}]$.
+
+Different polynomials create a different arithmetic universes.
+
+\subsection{Problem 14}
+Suppose $\alpha$ satisfies 
+    \[\alpha^2-2 = 0\]
+
+abd $\beta$ satifies
+    \[\beta^4-4\beta^2+2 = 0\]
+
+How could you tell whether $\beta$ lives in the same arithmetic world as $\alpha$?
+
+I hope you did a break and try to solve it because now you are in the edge of a great discover.
+Treat y = $x^2$:
+    \[y^2-4y+2\]
+
+Solving Baskara we find:
+    \[y = \frac{4\pm\sqrt{16-8}}{2} = 2\pm\sqrt{2}\]
+
+Therefore the roots satisfy:
+    \[x^2+\sqrt{2}\]
+or
+    \[x^2-\sqrt{2}\]
+
+Now, notice something remarkable. The polynomial contains only integers:
+    \[x^4-4x^2+2\]
+
+Yet, it's roots invole $\sqrt{2}$, so:
+    \begin{quote}
+        The world generated by it's roots seems connected to the world generated by $\sqrt{2}$.
+    \end{quote}
+
+This makes us think:
+    \begin{quote}
+        Does a root of one polynomial already live inside the arithmetic universe generated by another root?
+    \end{quote}
+
+or
+
+    \begin{quote}
+        When do two different polynomials generate the same arithmetic world?
+    \end{quote}
